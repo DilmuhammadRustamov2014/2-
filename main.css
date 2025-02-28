@@ -1,0 +1,229 @@
+/* Общий стиль страницы */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Обертка для таблицы */
+.wrapper {
+    width: 80%;
+    max-width: 900px;
+    margin-top: 20px;
+}
+
+/* Анимация появления всей таблицы */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Анимация появления строк с задержкой */
+@keyframes rowFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Основной стиль таблицы */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Ячейки таблицы */
+td {
+    padding: 14px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    opacity: 0;
+    animation: rowFadeIn 0.6s ease-out forwards;
+}
+
+/* Разные цвета для четных и нечетных строк */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Ховер-эффект для строк */
+tr:hover {
+    background: linear-gradient(90deg, rgba(0,123,255,0.1), rgba(0,123,255,0.3));
+    transform: scale(1.02);
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3);
+    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Клик по строке (активный элемент) */
+tr:active {
+    background-color: rgba(0, 123, 255, 0.5);
+    transition: background 0.1s ease-in-out;
+}
+
+/* Разные цвета для статусов */
+.completed-true {
+    background-color: #28a745;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+}
+
+/* Анимация ховера для true */
+.completed-true:hover {
+    transform: rotate(5deg) scale(1.1);
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.4);
+}
+
+/* Разные цвета для false */
+.completed-false {
+    background-color: #dc3545;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+}
+
+/* Анимация ховера для false */
+.completed-false:hover {
+    transform: rotate(-5deg) scale(1.1);
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.4);
+}
+
+/* Плавный градиент при ховере */
+@keyframes flash {
+    0% { background-color: rgba(255, 255, 255, 0.5); }
+    100% { background-color: transparent; }
+}
+
+tr:hover td {
+    animation: flash 1s;
+}
+/* Анимация плавного изменения цвета фона */
+@keyframes gradientBackground {
+    0% { background: #ff9a9e; }
+    25% { background: #fad0c4; }
+    50% { background: #fbc2eb; }
+    75% { background: #a18cd1; }
+    100% { background: #ff9a9e; }
+}
+
+/* Основной стиль body */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    animation: gradientBackground 10s infinite alternate ease-in-out;
+    background-size: 200% 200%;
+}
+
+/* Контейнер таблицы */
+.wrapper {
+    width: 80%;
+    max-width: 900px;
+    margin-top: 20px;
+}
+
+/* Основной стиль таблицы */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Ячейки таблицы */
+td {
+    padding: 14px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    opacity: 0;
+    animation: rowFadeIn 0.6s ease-out forwards;
+}
+
+/* Разные цвета для четных и нечетных строк */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Ховер-эффект для строк */
+tr:hover {
+    background: linear-gradient(90deg, rgba(0,123,255,0.1), rgba(0,123,255,0.3));
+    transform: scale(1.02);
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3);
+    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Разные цвета для статусов */
+.completed-true {
+    background-color: #28a745;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+}
+
+/* Анимация ховера для true */
+.completed-true:hover {
+    transform: rotate(5deg) scale(1.1);
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.4);
+}
+
+/* Разные цвета для false */
+.completed-false {
+    background-color: #dc3545;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+}
+
+/* Анимация ховера для false */
+.completed-false:hover {
+    transform: rotate(-5deg) scale(1.1);
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.4);
+}
